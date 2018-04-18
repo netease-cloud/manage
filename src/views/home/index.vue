@@ -25,7 +25,7 @@
             </CheckboxGroup>
           </div>
           <div style="float:right;color: #fff; height: 100%;" v-show="tabIdx == 'reserve'">
-            <CheckboxGroup v-model="switchBtn" @on-change="reserve">
+            <CheckboxGroup v-model="switchBtn" @on-change="reserves">
               <Checkbox label="开启"></Checkbox>
               <Checkbox label="关闭"></Checkbox>
             </CheckboxGroup>
@@ -38,17 +38,21 @@
       <Sider style="min-width:350px;max-width: 350px;" width="350px" class="laout-left">
         <div class="shop_info">
           <div class="shop_item">
-            <img class="shop_item_img" src="../../assets/vip.png" alt="">
-            <div class="shop_text">会员</div>
+            <img class="shop_item_img" src="../../assets/vip.png" v-show="tabIdx == 'eat'" alt="">
+            <img class="shop_item_img" src="../../assets/dan.png" v-show="tabIdx == 'out-eat'" alt="">
+            <img class="shop_item_img" src="../../assets/yu.png" v-show="tabIdx == 'reserve'" alt="">
+            <div class="shop_text" v-if="tabIdx == 'eat'">会员</div>
+            <div class="shop_text" v-else-if="tabIdx == 'out-eat'">开单</div>
+            <div class="shop_text" v-else-if="tabIdx == 'reserve'">预约</div>
           </div>
           
           <div class="shop_item">
-            <img class="shop_item_img" src="../../assets/vip.png" alt="">
-            <div class="shop_text">拼桌</div>
+            <img class="shop_item_img" src="../../assets/zhuo.png" alt="" v-show="tabIdx != 'out-eat'">
+            <div class="shop_text" v-show="tabIdx != 'out-eat'">拼桌</div>
           </div>
           
           <div class="shop_item">
-            <img class="shop_item_img" src="../../assets/vip.png" alt="">
+            <img class="shop_item_img" src="../../assets/kai.png" alt="">
             <div class="shop_text">开班</div>
           </div>
         </div>
@@ -121,13 +125,14 @@
         }
       },
       // 预定开启
-      reserve (e) {
-        console.log(e)
+      reserves (e) {
+        e.shift()
+        this.switchBtn.push(e.shift())
       }
     },
   }
 </script>
-<style>
+<style scoped>
   .ivu-layout-header {
     height: 70px;
   }
@@ -144,6 +149,7 @@
     text-align: center;
     border-color: #c4c8d4;    
     background: #c4c8d4;
+    box-shadow:0px -3px 5px #999 inset;
   }
   .top-btn:hover {
     color: #000;

@@ -4,10 +4,10 @@ import Vue from 'vue'
 import App from './App'
 import {router} from './router'
 import iView from 'iview'
-// import util from '@/libs/util.js'
+import util from '@/lib/util.js'
 import store from './store/index'
 import 'iview/dist/styles/iview.css'
-// import '../index.less'
+import '../index.less'
 Vue.config.productionTip = false
 
 Vue.use(iView)
