@@ -30,7 +30,7 @@
       </Col>
       <Col span="11" offset="2">
         <div class="car-title">订单金额</div>
-        <Card dis-hover>
+        <Card dis-hover class="card" :padding="0" >
           <Row>
             <Col span="12">
               <div class="card_item card_left">
