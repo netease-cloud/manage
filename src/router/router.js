@@ -44,7 +44,7 @@ export const appRouter = [
     children: [
       {
         path: 'index',
-        icon: 'ios-home-outline',
+        icon: 'ios-browsers-outline',
         name: 'business_index',
         title: '营业概要',
         component: resolve => require(['@/views/business/index.vue'],resolve)
@@ -58,7 +58,7 @@ export const appRouter = [
     children: [
       {
         path: 'index',
-        icon: 'ios-home-outline',
+        icon: 'clipboard',
         name: 'order-manage_index',
         title: '订单管理',
         component: resolve => require(['@/views/order-manage/index.vue'],resolve)
@@ -72,7 +72,7 @@ export const appRouter = [
     children: [
       {
         path: 'index',
-        icon: 'ios-home-outline',
+        icon: 'ios-pricetag-outline',
         name: 'promotion_index',
         title: '促销活动',
         component: resolve => require(['@/views/promotion/index.vue'],resolve)

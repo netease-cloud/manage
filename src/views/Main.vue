@@ -5,7 +5,7 @@
         <userInfo></userInfo>
         <menuLeft :menuList="menuList"></menuLeft>
       </Sider>
-      <Layout>
+      <Layout class="layout-rgt">
         <router-view>
           <keep-alive></keep-alive>
         </router-view>
@@ -34,5 +34,8 @@
   }
   .laout-left {
     background: #1e2538;
+  }
+  .layout-rgt {
+    background: linear-gradient(to bottom,  #94a0ba, #eccfa5);
   }
 </style>

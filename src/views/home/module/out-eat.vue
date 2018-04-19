@@ -10,6 +10,7 @@
     <div>
       <div v-show="selectIdx == '1'">
         <Table stripe :columns="columns1" :data="systemData"></Table>
+        <Page :total="40" size="small" style="float:right;margin-top:20px;" show-elevator show-sizer></Page>
       </div>
       <div v-show="selectIdx == '2'">
         <Table stripe :columns="columns2" :data="systemData"></Table>        
