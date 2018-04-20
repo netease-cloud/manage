@@ -17,6 +17,7 @@
   import menuLeft from '../components/menu/menuLeft.vue'
   import userInfo from '../components/user-info/userInfo.vue'
   export default {
+    name: 'Main',
     computed: {
       menuList() {
         return this.$store.state.app.menuList
